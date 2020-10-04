@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -6,18 +6,30 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="jquery.js\"></script>
+        <script src="jquery.js"></script>
         <script src="client.js"></script>
-        <link rel="stylesheet" href="">
     </head>
     <body>
-    <button id="addEmployeeForm" text="Submission">Submit</button>
-    <div>
-        <input id="nameIn" type="text" placeholder="First Name"></input>
-        <input id="lNameIn" type="text" placeholder="Last Name"></input>
-        <input id="idNumIn" type="text" placeholder="ID Number"></input>
-        <input id="jobTitleIn" type="text" placeholder="Job Title"></input>
-        <input id="salaryIn" type="text" placeholder="Annual Salary"></input>
+    <div id="dataInput">
+        <label htmlFor="nameIn">First Name:</label>
+        <input id="nameIn" type="text" placeholder="First Name" class="inputField"></input>
+        <label htmlFor="lastNameIn">Last ame:</label>
+        <input id="lastNameIn" type="text" placeholder="Last Name" class="inputField"></input>
+        <label htmlFor="idNumIn">ID Number:</label>
+        <input id="idNumIn" type="number" placeholder="ID Number" class="inputField"></input>
+        <label htmlFor="jobTitleIn">Job Title:</label>
+        <input id="jobTitleIn" type="text" placeholder="Job Title" class="inputField"></input>
+        <label htmlFor="salaryIn">Annual Salary:</label>
+        <input id="salaryIn" type="number" placeholder="Annual Salary" class="inputField"></input>
+        <button id="addEmployeeForm">Submit</button>
+    </div>
+    <div id="formsDiv">
+        <ul id="formsOut">
+
+        </ul>
+    </div>
+    <div id="totalDiv">
+        <h3 id="totalOut">Monthly Company Salaries:</h3>
     </div>
     </body>
 </html>

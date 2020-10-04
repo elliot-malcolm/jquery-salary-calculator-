@@ -27,7 +27,7 @@ function addInfo()
             salary: $('#salaryIn').val(),
         }
 
-    if( valuePull(formIn))
+    if( valuePull())
     {
         console.log("Missing Inputs...");
         return false
@@ -62,7 +62,7 @@ function displayForms()
                 ${ employee.name }, 
                 ${ employee.lastName }, 
                 ${ employee.idNum }, 
-                ${ employee.jobTitles }, 
+                ${ employee.jobTitle }, 
                 ${ employee.salary }, 
             </li>`);
 
@@ -86,10 +86,26 @@ function displayMonthlyCosts()
 console.log(annualCosts);
 }
 
-function valuePull()
+function valuePull(formIn)
 {
-    console.log('invaluePull')
-        if( this.name.includes( '' || null || undefined || "" ))
+    console.log('in Value Pull')
+        if( formIn.name === "" || '' || undefined || null )
+        {
+        return false
+        }
+        if( formIn.name === "" || '' || undefined || null )
+        {
+        return false
+        }
+        if( formIn.name === "" || '' || undefined || null )
+        {
+        return false
+        }
+        if( formIn.name === "" || '' || undefined || null )
+        {
+        return false
+        }
+        if( formIn.name === "" || '' || undefined || null )
         {
         return false
         }
