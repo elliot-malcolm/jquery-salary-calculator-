@@ -7,18 +7,11 @@ body {
     background-color:hsla(0, 100%, 90%, 0.3);
 }
 
-#totalOut {
-    text-align: right;
-    position: fixed;
-    right: 200px;
-    display: inline-block;
-} 
-
 table {
     border-collapse: collapse;
     border: 2px solid rgb(200,200,200);
     letter-spacing: 1px;
-    width: 100%;
+    width: 50%;
   }
   
   td, th {
@@ -31,17 +24,37 @@ table {
   }
   
   td {
-    text-align: center;
+    text-align: left;
   }
   
   tr:nth-child(even) td {
-    background-color: rgb(250,250,250);
+    background-color: rgb(231, 44, 243);
   }
   
   tr:nth-child(odd) td {
-    background-color: rgb(245,245,245);
+    background-color: rgb(255, 164, 240);
   }
   
   caption {
     padding: 10px;
+
   }
+
+  #tableHeaders {
+      font-weight: bold;
+  }
+  
+  #totalOut {
+    position: relative;
+    left: 65%;
+} 
+
+hr { display: block; 
+    margin-before: 0.1em; 
+    margin-after: 0.1em; 
+    margin-start: auto; 
+    margin-end: auto; 
+    overflow: hidden; 
+    border-style: inset; 
+    border-width: 2px; 
+    border-color: pink;}

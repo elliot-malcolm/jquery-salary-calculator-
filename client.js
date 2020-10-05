@@ -8,7 +8,7 @@ function onReady()
 { 
     console.log('inJQ');
     $( '#addEmployeeForm' ).on( 'click', addInfo );
-    $( '#formsOut' ).on('click', '.deleteBtn', removeEmployee );
+    $( '#formsOut' ).on('click', '.deleteBtn', removeEmployeeFromDom );
 }
 
     // intake employee info to the DOM + employeeForms[]
@@ -62,14 +62,14 @@ function displayForms()
     for( employee of employeeForms )
     {  
         el.append 
-            (`<li> 
-                ${ employee.name }
-                ${ employee.lastName }
-                ${ employee.idNum }
-                ${ employee.jobTitle }
-                ${ employee.salary }
-                <button class="deleteBtn">Delete</button>
-            </li>`);
+            (`<tr>
+                <td>${ employee.name }</td>
+                <td>${ employee.lastName }</td>
+                <td>${ employee.idNum }</td>
+                <td>${ employee.jobTitle }</td>
+                <td>${ employee.salary }</td>
+                <td><button class="deleteBtn">Delete</button>
+            <tr>`);
     }
 }
 
@@ -90,7 +90,7 @@ function displayMonthlyCosts()
 
     monthlyCosts = Number.parseFloat(annualCosts / 12).toFixed(2);
 
-    el.append(`<h3> Monthly Company Salaries: $${monthlyCosts} <h3>`);
+    el.append(`<h5>Monthly Company Salaries: $${monthlyCosts}<h5>`);
 
     checkTotalSalary();
 }
@@ -105,10 +105,10 @@ function checkTotalSalary()
 }
 
     //delete employee from DOM (but remains in employeeForms[] until refresh)
-function removeEmployee()
+function removeEmployeeFromDom()
 {
     console.log( 'in remove employee ');
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
     displayMonthlyCosts();
 }
 

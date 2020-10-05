@@ -14,8 +14,10 @@
         <h1 id="projectName">Monthly Expense Calculator
 
         </h1>
+        <hr></hr>
     <div id="dataInput">
         <h2>Add Employee</h2>
+        <hr></hr>
         <label htmlFor="nameIn">First Name:</label>
         <input id="nameIn" type="text" placeholder="First Name" class="inputField"></input>
         <br>
@@ -33,28 +35,27 @@
         <br>
         <button id="addEmployeeForm">Submit</button>
     </div>
+    <div id="totalDiv">
+        <h2 id="totalOut">Monthly Company Salaries:</h2>
+    </div>
     <br></br>
     <div id="formsDiv" class="table">
         <table>
+            <h2>Employees</h2>
+            <hr></hr>
             <tr id="tableHeaders">
-                <td>Name</td>
-                <td>Last Name</td>
-                <td>ID Number</td>
-                <td>Job Title</td>
-                <td>Salary</td>
+                <td>Name:</td>
+                <td>Last Name:</td>
+                <td>ID Number:</td>
+                <td>Job Title:</td>
+                <td>Salary:</td>
+                <td></td>
             </tr>
-            <tr id="formsOutTable">
-                <!-- <ul id="formsOut">
-            </ul> -->
-
-            </tr>
-        </table>
+            <tbody id="formsOut">
+            </tbody>
     </div>
     <div id="missingInputsDiv">
         <ul id="missingInputs"></ul>
-    </div>
-    <div id="totalDiv">
-        <h3 id="totalOut">Monthly Company Salaries:</h3>
     </div>
     </body>
 </html>
