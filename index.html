@@ -8,31 +8,50 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="jquery.js"></script>
         <script src="client.js"></script>
+        <link rel="stylesheet" href="stylesheet.css"></link>
     </head>
     <body>
+        <h1 id="projectName">Monthly Expense Calculator
+
+        </h1>
     <div id="dataInput">
+        <h2>Add Employee</h2>
         <label htmlFor="nameIn">First Name:</label>
         <input id="nameIn" type="text" placeholder="First Name" class="inputField"></input>
-        <label htmlFor="lastNameIn">Last ame:</label>
+        <br>
+        <label htmlFor="lastNameIn">Last Name:</label>
         <input id="lastNameIn" type="text" placeholder="Last Name" class="inputField"></input>
+        <br>
         <label htmlFor="idNumIn">ID Number:</label>
         <input id="idNumIn" type="number" placeholder="ID Number" class="inputField"></input>
+        <br>
         <label htmlFor="jobTitleIn">Job Title:</label>
         <input id="jobTitleIn" type="text" placeholder="Job Title" class="inputField"></input>
+        <br>
         <label htmlFor="salaryIn">Annual Salary:</label>
         <input id="salaryIn" type="number" placeholder="Annual Salary" class="inputField"></input>
+        <br>
         <button id="addEmployeeForm">Submit</button>
     </div>
+    <br></br>
     <div id="formsDiv" class="table">
-            <tr>
-                <th>Name</th>
-                <th>Last Name</th>
-                <th>ID Number</th>
-                <th>Job Title</th>
-                <th>Salary</th>
+        <table>
+            <tr id="tableHeaders">
+                <td>Name</td>
+                <td>Last Name</td>
+                <td>ID Number</td>
+                <td>Job Title</td>
+                <td>Salary</td>
             </tr>
-        <ul id="formsOut">
-            </ul>
+            <tr id="formsOutTable">
+                <!-- <ul id="formsOut">
+            </ul> -->
+
+            </tr>
+        </table>
+    </div>
+    <div id="missingInputsDiv">
+        <ul id="missingInputs"></ul>
     </div>
     <div id="totalDiv">
         <h3 id="totalOut">Monthly Company Salaries:</h3>

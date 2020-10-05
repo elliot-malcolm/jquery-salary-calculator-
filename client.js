@@ -11,10 +11,7 @@ function onReady()
     $( '#formsOut' ).on('click', '.deleteBtn', removeEmployee );
 }
 
-
-Object.getOwnPropertyNames
-
-
+    // intake employee info to the DOM + employeeForms[]
 function addInfo()
 {
     console.log( 'in addInfo' );
@@ -27,16 +24,22 @@ function addInfo()
             jobTitle: $('#jobTitleIn').val(),
             salary: $('#salaryIn').val(),
         }
-
+    // gate out empty inputs
     if( formIn.name === '' || formIn.lastName === '' || formIn.idNum === '' || formIn.jobTitle === '' || formIn.salary === '' )
     {
         console.log("Missing Inputs...");
+        let el = $('#missingInputs');
+        el.empty();
+        el.append(`<ul>Missing Input Fields or Improper Entry.</ul>`);
         return false
     }
+    // add employee info 
     else 
         {
         console.log('added employee:', formIn );
         employeeForms.push( formIn );
+        let el = $('#missingInputs');
+        el.empty();
         console.log(employeeForms);
 
         $('#nameIn').val( '' );
@@ -50,6 +53,7 @@ function addInfo()
     }
 }
 
+    // display employee info
 function displayForms()
 {   
     console.log('in displayForms');
@@ -69,6 +73,7 @@ function displayForms()
     }
 }
 
+    // display monthly costs; check salary total for overage 
 function displayMonthlyCosts()
 {
     console.log( 'in monthly costs');
@@ -90,19 +95,29 @@ function displayMonthlyCosts()
     checkTotalSalary();
 }
 
-function checkTotalSalary(){
-    if( monthlyCosts > Number(20000)){
+    //highlight costs 'red' if overage
+function checkTotalSalary()
+{
+    if( monthlyCosts > Number(20000))
+    {
         $( '#totalOut' ).css( 'background-color', 'red');
     }
 }
-function removeEmployee(){
+
+    //delete employee from DOM (but remains in employeeForms[] until refresh)
+function removeEmployee()
+{
     console.log( 'in remove employee ');
     $(this).parent().remove();
     displayMonthlyCosts();
 }
 
 
-// }
+
+
+
+
+
 // [x] : input form collecting data 
 // [x] : submit button to collect data 
 // [x] : store information from submit button
