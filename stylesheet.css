@@ -58,3 +58,8 @@ hr { display: block;
     border-style: inset; 
     border-width: 2px; 
     border-color: pink;}
+
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
