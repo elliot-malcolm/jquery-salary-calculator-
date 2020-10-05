@@ -8,6 +8,7 @@ function onReady()
 { 
     console.log('inJQ');
     $( '#addEmployeeForm' ).on( 'click', addInfo );
+    $( '#formsOut' ).on('click', '.deleteBtn', removeEmployee );
 }
 
 
@@ -54,18 +55,17 @@ function displayForms()
     console.log('in displayForms');
     let el = $('#formsOut');
     el.empty();
-    // for( let i = 0; i < employeeForms.length; i++);
     for( employee of employeeForms )
     {  
         el.append 
             (`<li> 
-                ${ employee.name }, 
-                ${ employee.lastName }, 
-                ${ employee.idNum }, 
-                ${ employee.jobTitle }, 
-                ${ employee.salary }, 
+                ${ employee.name }
+                ${ employee.lastName }
+                ${ employee.idNum }
+                ${ employee.jobTitle }
+                ${ employee.salary }
+                <button class="deleteBtn">Delete</button>
             </li>`);
-
     }
 }
 
@@ -82,10 +82,24 @@ function displayMonthlyCosts()
     {
     annualCosts += Number(employeeForms[i].salary);
     }
-    el.append(`<h3> Monthly Company Salaries: ${annualCosts} <h3>`);
-console.log(annualCosts);
+
+    monthlyCosts = Number.parseFloat(annualCosts / 12).toFixed(2);
+
+    el.append(`<h3> Monthly Company Salaries: $${monthlyCosts} <h3>`);
+
+    checkTotalSalary();
 }
 
+function checkTotalSalary(){
+    if( monthlyCosts > Number(20000)){
+        $( '#totalOut' ).css( 'background-color', 'red');
+    }
+}
+function removeEmployee(){
+    console.log( 'in remove employee ');
+    $(this).parent().remove();
+    displayMonthlyCosts();
+}
 
 
 // }
@@ -95,10 +109,10 @@ console.log(annualCosts);
 // [x] : append info to the DOM and clear inputs
 
 
-// [0] : using data, calculate monthly costs 
-// [0] : if total exceeds 20k, highlight background red
+// [x] : using data, calculate monthly costs 
+// [x] : if total exceeds 20k, highlight background red
 
-// [0] : delete button to remove employee from the DOM
+// [x] : delete button to remove employee from the DOM
 
 
 // Stretchgoals
