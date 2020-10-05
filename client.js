@@ -1,12 +1,9 @@
 $(document).ready( onReady );
 
-console.log( 'in js ');
-
 let employeeForms = []
 
 function onReady()
 { 
-    console.log('inJQ');
     $( '#addEmployeeForm' ).on( 'click', addInfo );
     $( '#formsOut' ).on('click', '.deleteBtn', removeEmployeeFromDom );
 }
@@ -14,8 +11,6 @@ function onReady()
     // intake employee info to the DOM + employeeForms[]
 function addInfo()
 {
-    console.log( 'in addInfo' );
-
     let formIn = 
         {
             name: $('#nameIn').val(),
@@ -24,19 +19,19 @@ function addInfo()
             jobTitle: $('#jobTitleIn').val(),
             salary: $('#salaryIn').val(),
         }
+
     // gate out empty inputs
     if( formIn.name === '' || formIn.lastName === '' || formIn.idNum === '' || formIn.jobTitle === '' || formIn.salary === '' )
     {
-        console.log("Missing Inputs...");
         let el = $('#missingInputs');
         el.empty();
         el.append(`<ul>Missing Input Fields or Improper Entry.</ul>`);
         return false
     }
+
     // add employee info 
     else 
         {
-        console.log('added employee:', formIn );
         employeeForms.push( formIn );
         let el = $('#missingInputs');
         el.empty();
@@ -56,7 +51,6 @@ function addInfo()
     // display employee info
 function displayForms()
 {   
-    console.log('in displayForms');
     let el = $('#formsOut');
     el.empty();
     for( employee of employeeForms )
@@ -76,8 +70,6 @@ function displayForms()
     // display monthly costs; check salary total for overage 
 function displayMonthlyCosts()
 {
-    console.log( 'in monthly costs');
-
     annualCosts = 0
 
     let el = $('#totalOut');
@@ -107,7 +99,6 @@ function checkTotalSalary()
     //delete employee from DOM (but remains in employeeForms[] until refresh)
 function removeEmployeeFromDom()
 {
-    console.log( 'in remove employee ');
     $(this).parent().parent().remove();
     displayMonthlyCosts();
 }
@@ -129,7 +120,6 @@ function removeEmployeeFromDom()
 
 // [x] : delete button to remove employee from the DOM
 
-
 // Stretchgoals
-// [0] : CSS funtimes 
-// [0] : upon deletion, update total salaries 
+// [~] : CSS funtimes 
+// [0] : upon deletion, update total salaries in array
