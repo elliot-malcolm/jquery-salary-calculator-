@@ -27,12 +27,12 @@ function addInfo()
             salary: $('#salaryIn').val(),
         }
 
-    if( valuePull())
+    if( formIn.name === '' || formIn.lastName === '' || formIn.idNum === '' || formIn.jobTitle === '' || formIn.salary === '' )
     {
         console.log("Missing Inputs...");
         return false
     }
-        else 
+    else 
         {
         console.log('added employee:', formIn );
         employeeForms.push( formIn );
@@ -86,30 +86,6 @@ function displayMonthlyCosts()
 console.log(annualCosts);
 }
 
-function valuePull(formIn)
-{
-    console.log('in Value Pull')
-        if( formIn.name === "" || '' || undefined || null )
-        {
-        return false
-        }
-        if( formIn.name === "" || '' || undefined || null )
-        {
-        return false
-        }
-        if( formIn.name === "" || '' || undefined || null )
-        {
-        return false
-        }
-        if( formIn.name === "" || '' || undefined || null )
-        {
-        return false
-        }
-        if( formIn.name === "" || '' || undefined || null )
-        {
-        return false
-        }
-}
 
 
 // }
@@ -124,49 +100,7 @@ function valuePull(formIn)
 
 // [0] : delete button to remove employee from the DOM
 
+
+// Stretchgoals
 // [0] : CSS funtimes 
 // [0] : upon deletion, update total salaries 
-
-// Object.getOwnPropertyNames...
-// ${ employeeForms[i].name },
-
-// console.log( 'in addInfo' );
-// let employeeForm = {
-//     name: $('#nameIn').val(),
-//     lastName: $('#lastNameIn').val(),
-//     idNum: $('#idNumIn').val(),
-//     jobTitle: $('#jobTitleIn').val(),
-//     salary: $('#salaryIn').val(),
-// // // }
-
-// function EmployeeFormator (name, lastName, idNum, jobTitle, salary)
-// {
-//     $('#nameIn').val() = name;
-//     $('#lastNameIn').val() = lastName;
-//     $('#idNumIn').val() = idNum;
-//     $('#jobTitleIn').val() = jobTitle;
-//     $('#salaryIn').val() = salary;
-// }
-// // console.log('added employee:', employeeForm );
-
-//             // ${ employeeForms[i].lastName },
-            // ${ employeeForms[i].idNum }, 
-            // ${ employeeForms[i].jobTitle },
-            // ${ employeeForms[i].salary },
-
-// function displayForms()
-// {   
-//     console.log('in displayForms');
-//     let el = $('#formsOut');
-//     el.empty();
-//     for( let i=0; i< employeeForms.length; i++);
-//     {
-//         el.append(
-//             `<li> 
-//             ${ employeeForms[i].name }, 
-//             ${ employeeForms[i].lastName },
-//             ${ employeeForms[i].idNum }, 
-//             ${ employeeForms[i].jobTitle },
-//             ${ employeeForms[i].salary },
-//             </li>`)
-//     
